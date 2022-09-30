@@ -8,8 +8,15 @@ void main() {
   );
 }
 
-class GadoCard extends StatelessWidget {
+class GadoCard extends StatefulWidget {
   const GadoCard({Key? key}) : super(key: key);
+
+  @override
+  State<GadoCard> createState() => _GadoCardState();
+}
+
+class _GadoCardState extends State<GadoCard> {
+  int flutterLevel = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +27,15 @@ class GadoCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            flutterLevel = flutterLevel + 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blueGrey[800],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -63,7 +79,7 @@ class GadoCard extends StatelessWidget {
             ),
             SizedBox(height: 9.5),
             Text(
-              '5',
+              '$flutterLevel',
               style: TextStyle(
                 fontSize: 27,
                 color: Colors.yellowAccent[100],
