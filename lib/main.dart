@@ -95,9 +95,7 @@ class _GadoCardState extends State<GadoCard> {
                   color: Colors.blueGrey[300],
                   size: 25,
                 ),
-                SizedBox(
-                  width: 9.0,
-                ),
+                SizedBox(width: 9.0),
                 Text(
                   'athanasiusgadosey@gmail.com',
                   style: TextStyle(
